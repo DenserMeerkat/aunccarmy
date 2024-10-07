@@ -15,7 +15,7 @@ const ThemeButtons = () => {
     const Icon = props.Icon;
     return (
       <Toggle
-        className="rounded-full data-[state=on]:bg-rose-200 dark:data-[state=on]:bg-slate-200 dark:data-[state=on]:dark:bg-slate-800 data-[state=on]:dark:bg-rose-800"
+        className="rounded-full data-[state=on]:bg-muted"
         size={"xs"}
         aria-label={`${themeName} Theme Toggle`}
         pressed={isActive}

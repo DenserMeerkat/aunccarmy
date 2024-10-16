@@ -29,7 +29,7 @@ const MainNav = ({ className }: ClassNameProp) => {
               size={"default"}
               value={item.href}
               className={cn(
-                "rounded-none border-border px-4 font-medium tracking-wide hover:bg-muted hover:text-foreground data-[state=on]:bg-muted data-[state=on]:font-bold lg:px-5",
+                "rounded-none border-border bg-background px-4 font-medium tracking-wide hover:bg-muted hover:text-foreground data-[state=on]:bg-muted data-[state=on]:font-bold lg:px-5",
                 pathname == item.href ? "pointer-events-none" : "",
                 index == navItems.length - 1 ? "" : "border-r",
               )}

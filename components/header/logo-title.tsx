@@ -6,9 +6,10 @@ const LogoTitle = () => {
   return (
     <Link href="/" className="sticky z-[80] flex items-center gap-4">
       <Image
+        className="h-auto"
         src="/images/logos/ncc_100.png"
         width={18}
-        height={40}
+        height={26}
         alt="NCC Logo"
         priority
       />

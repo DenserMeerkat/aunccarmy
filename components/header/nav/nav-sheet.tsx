@@ -9,11 +9,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import RTooltip from "@/components/common/tooltip";
 
 const NavSheet = ({ className }: ClassNameProp) => {
   const [open, setOpen] = useState(false);
@@ -34,26 +30,21 @@ const NavSheet = ({ className }: ClassNameProp) => {
 
   return (
     <>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <Button
-            variant={"outline"}
-            size={"icon"}
-            className="z-[80] rounded-full border-2 md:hidden"
-            onClick={() => setOpen((prev) => !prev)}
-          >
-            <ChevronDown
-              className={cn(
-                "h-5 w-5 transform transition-transform duration-300",
-                open ? "rotate-180" : "rotate-0",
-              )}
-            />
-          </Button>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>Toggle Menu</p>
-        </TooltipContent>
-      </Tooltip>
+      <RTooltip content={<p>Toggle Menu</p>}>
+        <Button
+          variant={"outline"}
+          size={"icon"}
+          className={cn("z-[80] rounded-full border-2 md:hidden", className)}
+          onClick={() => setOpen((prev) => !prev)}
+        >
+          <ChevronDown
+            className={cn(
+              "h-5 w-5 transform transition-transform duration-300",
+              open ? "rotate-180" : "rotate-0",
+            )}
+          />
+        </Button>
+      </RTooltip>
 
       <motion.div
         initial={{ y: "-100%", opacity: 0 }}

@@ -22,3 +22,8 @@ export const navItems: MainNavItem[] = [
     href: "/gallery",
   },
 ];
+
+export const githubLinks = {
+  repo: "https://github.com/DenserMeerkat/aunccarmy",
+  dev: "https://github.com/DenserMeerkat",
+};

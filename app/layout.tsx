@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/components/theme-provider";
-import { AppStateProvider } from "@/components/context-provider";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import ReactQueryProvider from "./providers";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -27,13 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(plusJakartaSans.className)}>
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          <AppStateProvider>
-            <Header />
-            {children}
-            <Footer />
-          </AppStateProvider>
-        </ThemeProvider>
+        <ReactQueryProvider>
+          <Header />
+          {children}
+          <Footer />
+        </ReactQueryProvider>
       </body>
     </html>
   );

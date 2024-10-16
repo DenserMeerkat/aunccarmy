@@ -11,10 +11,10 @@ module.exports = {
   theme: {
     extend: {
       maxWidth: {
-        "8xl": "90rem",
+        "8xl": "92rem",
       },
       screens: {
-        "8xl": { raw: "(min-width: 90rem)" },
+        "8xl": { raw: "(min-width: 92rem)" },
       },
       colors: {
         border: "hsl(var(--border))",

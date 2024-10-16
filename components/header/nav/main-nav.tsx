@@ -5,12 +5,18 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { navItems } from "@/config";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { ClassNameProp } from "@/lib/types";
 
-const MainNav = () => {
+const MainNav = ({ className }: ClassNameProp) => {
   const pathname = usePathname();
 
   return (
-    <nav className="flex items-center overflow-hidden rounded-sm border border-muted">
+    <nav
+      className={cn(
+        "flex items-center overflow-hidden rounded-sm border border-border",
+        className,
+      )}
+    >
       <ToggleGroup
         role="navigation"
         type="single"
@@ -20,9 +26,10 @@ const MainNav = () => {
         {navItems.map((item, index: number) => (
           <Link key={item.title} href={item.href}>
             <ToggleGroupItem
+              size={"default"}
               value={item.href}
               className={cn(
-                "rounded-none border-muted px-5 font-medium tracking-wide hover:bg-muted hover:text-foreground data-[state=on]:bg-muted data-[state=on]:font-bold",
+                "rounded-none border-border px-4 font-medium tracking-wide hover:bg-muted hover:text-foreground data-[state=on]:bg-muted data-[state=on]:font-bold lg:px-5",
                 pathname == item.href ? "pointer-events-none" : "",
                 index == navItems.length - 1 ? "" : "border-r",
               )}

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const LogoTitle = () => {
   return (
-    <Link href="/" className="flex items-center gap-4">
+    <Link href="/" className="sticky z-[80] flex items-center gap-4">
       <Image
         src="/images/logos/ncc_100.png"
         width={18}

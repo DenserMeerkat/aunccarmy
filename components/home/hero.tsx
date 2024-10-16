@@ -8,7 +8,7 @@ import { heroLogos } from "@/resources/hero";
 
 const Hero = () => {
   return (
-    <section className="relative h-fit overflow-clip bg-muted/40">
+    <section className="relative h-fit overflow-clip bg-gradient-to-b from-muted/40 via-muted/60">
       <div className="relative mx-auto grid h-fit max-w-8xl grid-cols-12 px-4">
         <HeroContent />
         <HeroImage />
@@ -87,7 +87,7 @@ const HeroImage = () => {
   const nccShoulder = "/images/wallpapers/ncc_shoulder.png";
   return (
     <div className="col-span-0 hidden sm:col-span-5 lg:col-span-5 lg:block 2xl:col-span-6">
-      <div className="relative overflow-clip rounded-bl-[2rem] border-b-4 border-l-4 border-r-2 border-muted drop-shadow-md md:h-[500px] md:w-[700px] xl:h-[530px] xl:w-[760px] 2xl:h-[560px] 2xl:w-[780px]">
+      <div className="relative overflow-clip rounded-bl-[2rem] rounded-br-[2rem] border-b-4 border-l-4 border-r-2 border-muted drop-shadow-md md:h-[500px] md:w-[700px] xl:h-[530px] xl:w-[760px] 2xl:h-[560px] 2xl:w-[780px]">
         <Image
           src={nccShoulder}
           blurDataURL={nccShoulder.replace("images", "min_images")}

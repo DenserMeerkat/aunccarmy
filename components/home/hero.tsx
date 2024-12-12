@@ -86,7 +86,7 @@ const HeroContent = () => {
 const HeroImage = () => {
   const nccShoulder = "/images/wallpapers/ncc_shoulder.png";
   return (
-    <div className="col-span-0 hidden sm:col-span-5 lg:col-span-5 lg:block 2xl:col-span-6">
+    <div className=" col-span-0 hidden animate-in fade-in-0 sm:col-span-5 lg:col-span-5 lg:block 2xl:col-span-6">
       <div className="relative overflow-clip rounded-bl-[2rem] rounded-br-[2rem] border-b-4 border-l-4 border-r-2 border-muted drop-shadow-md md:h-[500px] md:w-[700px] xl:h-[530px] xl:w-[760px] 2xl:h-[560px] 2xl:w-[780px]">
         <Image
           src={nccShoulder}

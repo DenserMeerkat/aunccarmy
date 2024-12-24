@@ -1,3 +1,4 @@
+import { sql } from "drizzle-orm";
 import {
   integer,
   jsonb,
@@ -5,6 +6,7 @@ import {
   serial,
   text,
   timestamp,
+  uniqueIndex,
 } from "drizzle-orm/pg-core";
 
 export const reportsTable = pgTable("reports", {
@@ -37,3 +39,31 @@ export const carouselTable = pgTable("carousel", {
 });
 
 export type SelectSlide = typeof carouselTable.$inferSelect;
+
+export const anoTable = pgTable(
+  "ano",
+  {
+    id: serial("id").primaryKey(),
+    public_id: text("public_id"),
+    alt: text("alt").default(""),
+    name: text("name").notNull(),
+    platoon: text("platoon").notNull(),
+    start_date: timestamp("start_date"),
+    end_date: timestamp("end_date"),
+    email: text("email"),
+    phone: text("phone"),
+    desig: text("desig").notNull(),
+    dept: text("dept").notNull(),
+    createdAt: timestamp("created_at").notNull().defaultNow(),
+    updatedAt: timestamp("updated_at")
+      .notNull()
+      .$onUpdate(() => new Date()),
+  },
+  (anoTable) => ({
+    uniqueActivePlatoon: uniqueIndex("unique_active_ano_per_platoon")
+      .on(anoTable.platoon)
+      .where(sql`${anoTable.end_date} IS NULL`),
+  }),
+);
+
+export type SelectAno = typeof anoTable.$inferSelect;

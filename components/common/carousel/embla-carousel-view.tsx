@@ -18,7 +18,7 @@ import {
   useDotButton,
 } from "./carousel-indicators";
 import { Slide } from "@/lib/types";
-import { CldImage } from "next-cloudinary";
+import CldImage from "@/components/common/cld-image";
 
 type CarouselPropType = {
   slides: Slide[];
@@ -30,6 +30,7 @@ type CarouselPropType = {
   loop?: boolean;
   autoplay?: boolean;
   autoplayInterval?: number;
+  showAutoplay?: boolean;
   showProgress?: boolean;
 };
 
@@ -46,8 +47,8 @@ const EmblaCarousel: React.FC<CarouselPropType> = ({
   slideAspectRatio,
   slideSpacing,
   loop = true,
-  autoplay = true,
   autoplayInterval = 3000,
+  showAutoplay = true,
   showProgress = true,
 }) => {
   const tweenFactor = useRef(0);
@@ -187,7 +188,7 @@ const EmblaCarousel: React.FC<CarouselPropType> = ({
               onClick={() => onAutoplayButtonClick(onPrevButtonClick)}
               disabled={prevBtnDisabled}
             />
-            {autoplay && (
+            {showAutoplay && (
               <AutoplayButton
                 onClick={toggleAutoplay}
                 isPlaying={autoplayIsPlaying}
@@ -199,7 +200,7 @@ const EmblaCarousel: React.FC<CarouselPropType> = ({
             />
           </div>
           <div className="absolute inset-y-0 left-[50%] hidden -translate-x-[50%] place-content-center sm:grid">
-            {autoplay && showProgress && (
+            {showProgress && (
               <AutoplayProgress
                 showAutoplayProgress={showAutoplayProgress}
                 progressNode={progressNode}

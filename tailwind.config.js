@@ -11,9 +11,13 @@ module.exports = {
   theme: {
     extend: {
       maxWidth: {
+        xs: "24rem",
         "8xl": "92rem",
       },
       screens: {
+        xs: {
+          raw: "(min-width: 24rem)",
+        },
         "8xl": { raw: "(min-width: 92rem)" },
       },
       colors: {

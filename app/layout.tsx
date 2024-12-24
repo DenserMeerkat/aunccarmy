@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import ReactQueryProvider from "./providers";
-import GridPattern from "@/components/ui/grid-pattern";
 import { cn } from "@/lib/utils";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -26,20 +25,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(plusJakartaSans.className)}>
+      <body className={cn(plusJakartaSans.className, "min-w-[320px]")}>
         <ReactQueryProvider>
           <Header />
           {children}
-          <GridPattern
-            width={40}
-            height={40}
-            x={-1}
-            y={-1}
-            strokeDasharray={"4 2"}
-            className={cn(
-              "fixed -z-10 [mask-image:linear-gradient(to_bottom,white,transparent,transparent)] lg:[mask-image:linear-gradient(to_bottom_right,white,white,white,transparent,transparent,transparent,transparent)]",
-            )}
-          />
           <Footer />
         </ReactQueryProvider>
       </body>

@@ -53,6 +53,8 @@ const HomeCarousel = () => {
           slideWidth={slideWidth}
           slideAspectRatio={slideAspectRatio}
           slideSpacing={slideSpacing}
+          showAutoplay={true}
+          showProgress={true}
         />
       </div>
     </div>

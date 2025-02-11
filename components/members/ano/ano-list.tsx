@@ -5,8 +5,8 @@ import { getAnos } from "@/db/queries/select";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { SelectAno } from "@/db/schema";
-import { Skeleton } from "../ui/skeleton";
-import { AnoCard } from "./cards";
+import { AnoCard, MemberCardSkeleton } from "../cards";
+import { getOrganizedAnos } from "@/lib/transforms";
 
 const AnoList = () => {
   const [isDomLoaded, setIsDomLoaded] = useState(false);
@@ -18,7 +18,7 @@ const AnoList = () => {
       setAnos(data);
     },
     onError: (error) => {
-      toast.error("Failed to add ANO", {
+      toast.error("Failed to get ANOs", {
         description: error.message,
       });
     },
@@ -33,36 +33,32 @@ const AnoList = () => {
     return <AnoListSkeleton />;
   }
 
+  const { active: activeAnos, alumni: alumniAnos } = getOrganizedAnos(anos);
+
   return (
-    <div className="mx-auto my-8 flex max-w-7xl flex-wrap justify-center gap-6">
-      {anos.map((ano) => {
-        return (
-          <AnoCard
-            key={ano.id}
-            name={ano.name}
-            public_id={ano.public_id}
-            alt={ano.alt}
-            platoon={ano.platoon}
-            desig={ano.desig}
-            dept={ano.dept}
-          />
-        );
-      })}
+    <div className="my-8 space-y-12">
+      <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-6">
+        {activeAnos.map((ano) => {
+          return <AnoCard key={ano.id} ano={ano} />;
+        })}
+      </div>
+      <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-6">
+        {alumniAnos.map((ano) => {
+          return <AnoCard key={ano.id} ano={ano} />;
+        })}
+      </div>
     </div>
   );
 };
 
 export default AnoList;
 
-export const AnoListSkeleton = () => {
+const AnoListSkeleton = () => {
   const cardCount = Array.from({ length: 6 }, (_, i) => i);
   return (
-    <div className="mx-auto my-8 flex max-w-7xl flex-wrap justify-center gap-6">
+    <div className="mx-auto my-8 flex max-w-7xl flex-wrap justify-center gap-x-6 gap-y-12">
       {cardCount.map((_, i) => (
-        <Skeleton
-          key={i}
-          className="h-44 w-96 rounded-none sm:h-48 sm:w-96 xs:rounded-xl"
-        />
+        <MemberCardSkeleton key={i} />
       ))}
     </div>
   );

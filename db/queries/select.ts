@@ -1,12 +1,14 @@
 "use server";
 
-import { asc, count, desc, eq } from "drizzle-orm";
+import { asc, count, desc, eq, sql } from "drizzle-orm";
 import { db } from "../index";
 import {
   SelectAno,
+  SelectCadet,
   SelectReport,
   SelectSlide,
   anoTable,
+  cadetTable,
   carouselTable,
   reportsTable,
 } from "../schema";
@@ -21,6 +23,7 @@ export async function getReports(): Promise<ReportMeta[]> {
       date: reportsTable.date,
       location: reportsTable.location,
       thumb: reportsTable.thumb,
+      slug: reportsTable.slug,
     })
     .from(reportsTable)
     .orderBy(desc(reportsTable.date));
@@ -29,7 +32,11 @@ export async function getReports(): Promise<ReportMeta[]> {
 export async function getReportBySlug(
   slug: string,
 ): Promise<Array<SelectReport>> {
-  return db.select().from(reportsTable).where(eq(reportsTable.slug, slug));
+  return db
+    .select()
+    .from(reportsTable)
+    .where(eq(reportsTable.slug, slug))
+    .limit(1);
 }
 
 export async function getSlugs(): Promise<Array<string>> {
@@ -48,4 +55,22 @@ export async function getCarousel(): Promise<SelectSlide[]> {
 
 export async function getAnos(): Promise<SelectAno[]> {
   return db.select().from(anoTable).orderBy(asc(anoTable.end_date));
+}
+
+export async function getCadetsByYear(year: number): Promise<SelectCadet[]> {
+  return db
+    .select()
+    .from(cadetTable)
+    .where(eq(sql`EXTRACT(YEAR FROM ${cadetTable.end_date})`, year));
+}
+
+export async function getYears(): Promise<number[]> {
+  const res = await db
+    .select({
+      year: sql<number>`EXTRACT(YEAR FROM ${cadetTable.end_date})`.as("year"),
+    })
+    .from(cadetTable)
+    .groupBy(sql`year`);
+
+  return res.map((item) => item.year);
 }

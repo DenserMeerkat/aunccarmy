@@ -4,7 +4,7 @@ import AnoList from "./ano-list";
 
 export default function Officers() {
   return (
-    <section className="mx-auto max-w-7xl py-10">
+    <section className="mx-auto max-w-7xl pt-6">
       <SectionHeading
         className="mb-2"
         Icon={SparkleIcon}

@@ -1,4 +1,5 @@
-import Officers from "@/components/members/officers";
+import Officers from "@/components/members/ano/officers";
+import Cadets from "@/components/members/cadet/cadets";
 import GridPattern from "@/components/ui/grid-pattern";
 import { cn } from "@/lib/utils";
 
@@ -16,6 +17,7 @@ export default function Members() {
         )}
       />
       <Officers />
+      <Cadets />
     </main>
   );
 }

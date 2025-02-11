@@ -1,5 +1,6 @@
 import { sql } from "drizzle-orm";
 import {
+  boolean,
   integer,
   jsonb,
   pgTable,
@@ -15,8 +16,9 @@ export const reportsTable = pgTable("reports", {
   content: text("content").notNull(),
   date: timestamp("date"),
   location: text("location"),
-  thumb: text("thumb").notNull(),
+  thumb: text("thumb"),
   images: jsonb("images").array().notNull().default([]),
+  authors: jsonb("authors").array().notNull().default([]),
   slug: text("slug").unique().notNull(),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at")
@@ -67,3 +69,25 @@ export const anoTable = pgTable(
 );
 
 export type SelectAno = typeof anoTable.$inferSelect;
+
+export const cadetTable = pgTable("cadet", {
+  id: serial("id").primaryKey(),
+  reg_no: text("reg_no").notNull().default(""),
+  public_id: text("public_id"),
+  alt: text("alt").default(""),
+  name: text("name").notNull(),
+  platoon: text("platoon").notNull(),
+  desig: text("desig").notNull(),
+  dept: text("dept").notNull(),
+  start_date: timestamp("start_date"),
+  end_date: timestamp("end_date").notNull(),
+  rank: text("rank").notNull(),
+  a_cert: boolean("a_cert").notNull(),
+  c_cert: boolean("c_cert").notNull(),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at")
+    .notNull()
+    .$onUpdate(() => new Date()),
+});
+
+export type SelectCadet = typeof cadetTable.$inferSelect;

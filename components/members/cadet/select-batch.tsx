@@ -1,3 +1,4 @@
+import RTooltip from "@/components/common/tooltip";
 import {
   Select,
   SelectContent,
@@ -19,9 +20,11 @@ const SelectBatch = ({ onSelect, selectedYear, years }: SelectBatchProps) => {
       value={selectedYear.toString()}
       onValueChange={(value) => onSelect(Number(value))}
     >
-      <SelectTrigger className="bg-muted xs:w-[120px]">
-        <SelectValue placeholder="Select a batch" />
-      </SelectTrigger>
+      <RTooltip content="Select batch">
+        <SelectTrigger className="xs:w-[120px]">
+          <SelectValue />
+        </SelectTrigger>
+      </RTooltip>
       <SelectContent align="end">
         <SelectGroup>
           {years.map((year) => (

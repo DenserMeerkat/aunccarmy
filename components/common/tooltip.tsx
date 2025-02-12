@@ -6,16 +6,19 @@ import {
 } from "@/components/ui/tooltip";
 
 interface RTooltipProps {
+  className?: string;
   content: ReactNode;
   children: ReactNode;
   side?: "top" | "right" | "bottom" | "left" | undefined;
 }
 
-const RTooltip = ({ content, children, side }: RTooltipProps) => {
+const RTooltip = ({ className, content, children, side }: RTooltipProps) => {
   return (
     <Tooltip>
       <TooltipTrigger asChild>{children}</TooltipTrigger>
-      <TooltipContent side={side}>{content}</TooltipContent>
+      <TooltipContent className={className} side={side}>
+        {content}
+      </TooltipContent>
     </Tooltip>
   );
 };

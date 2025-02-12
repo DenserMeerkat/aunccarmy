@@ -5,7 +5,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import EmblaCarousel from "../common/carousel/embla-carousel-view";
 import { useMutation } from "@tanstack/react-query";
 import { getCarousel } from "@/db/queries/select";
-import { Slide } from "@/lib/types";
+import { Slide } from "@/types";
 
 const slideWidth = "90%";
 const slideAspectRatio = "30/13";

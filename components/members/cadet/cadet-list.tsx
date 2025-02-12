@@ -106,8 +106,8 @@ export default CadetList;
 
 const CadetListSkeleton = () => {
   return (
-    <>
-      <div className="mx-auto mt-4 flex w-fit items-center justify-center gap-4">
+    <div className="relative">
+      <div className="absolute -top-[4.4rem] right-2 flex items-center justify-center gap-4">
         <Skeleton className="h-[38px] w-[120px] rounded-lg" />
       </div>
 
@@ -131,6 +131,6 @@ const CadetListSkeleton = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };

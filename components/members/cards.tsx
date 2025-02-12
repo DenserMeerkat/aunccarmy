@@ -3,6 +3,7 @@ import { SelectAno, SelectCadet } from "@/db/schema";
 import { SquareUser, HeartHandshake } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
+import RTooltip from "../common/tooltip";
 
 export const MemberCard = (props: any) => {
   let { name, alt, platoon, desig, dept } = props;
@@ -65,12 +66,7 @@ export const AnoCard: React.FC<{ ano: SelectAno }> = ({ ano }) => {
         dept={ano.dept}
       />
 
-      {isAlumni && (
-        <div className="absolute bottom-0 right-0 flex select-none items-center rounded-tl-sm border-b border-r bg-background p-1 px-2 text-primary xs:rounded-br-md">
-          <HeartHandshake className="mr-1 h-3.5 w-3.5" />
-          <span className="text-xs font-semibold tracking-wider">Alumni</span>
-        </div>
-      )}
+      {isAlumni && <AlumniIndicator />}
     </div>
   );
 };
@@ -101,12 +97,7 @@ export const CadetCard: React.FC<{ cadet: SelectCadet }> = ({ cadet }) => {
         dept={cadet.dept}
       />
 
-      {isAlumni && (
-        <div className="absolute bottom-0 right-0 flex select-none items-center rounded-tl-sm border-b border-r bg-background p-1 px-2 text-primary xs:rounded-br-md">
-          <HeartHandshake className="mr-1 h-3.5 w-3.5" />
-          <span className="text-xs font-semibold tracking-wider">Alumni</span>
-        </div>
-      )}
+      {isAlumni && <AlumniIndicator />}
     </div>
   );
 };
@@ -127,5 +118,21 @@ export const MemberCardSkeleton = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+const AlumniIndicator = () => {
+  return (
+    <RTooltip
+      content={
+        <span className="font-semibold tracking-wide text-primary">Alumni</span>
+      }
+      side="bottom"
+      className="bg-background"
+    >
+      <div className="absolute bottom-0 right-0 flex select-none items-center rounded-tl-sm border-b border-r bg-background p-1 px-2 text-primary xs:rounded-br-md">
+        <HeartHandshake className="h-3.5 w-3.5" />
+      </div>
+    </RTooltip>
   );
 };

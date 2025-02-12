@@ -3,15 +3,14 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import { ClassNameProp } from "@/lib/types";
-import { navItems } from "@/config";
+import { navItems } from "@/constants";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import RTooltip from "@/components/common/tooltip";
 
-const NavSheet = ({ className }: ClassNameProp) => {
+const NavSheet = ({ className }: { className?: string }) => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 

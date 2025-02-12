@@ -17,7 +17,7 @@ import {
   useAutoplayProgress,
   useDotButton,
 } from "./carousel-indicators";
-import { Slide } from "@/lib/types";
+import { Slide } from "@/types";
 import CldImage from "@/components/common/cld-image";
 
 type CarouselPropType = {

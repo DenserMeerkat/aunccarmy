@@ -6,6 +6,8 @@ import {
   MountainIcon,
   HeartIcon,
   GraduationCapIcon,
+  ScaleIcon,
+  HandshakeIcon,
 } from "lucide-react";
 
 export const navItems: MainNavItem[] = [
@@ -40,39 +42,51 @@ export const links = {
 
 export const objectives = [
   {
-    title: "Character Development",
+    title: "Character Building",
     description:
-      "Develops character, discipline, and integrity through honesty, empathy, and responsibility.",
+      "Develops discipline, integrity, and responsibility through honesty and empathy.",
     icon: LightbulbIcon,
   },
   {
-    title: "Leadership Training",
+    title: "Ethical Values",
     description:
-      "Cultivates leadership skills through training, exercises, and practical experiences.",
+      "Fosters moral values, ethical behavior, and a strong sense of duty.",
+    icon: ScaleIcon,
+  },
+  {
+    title: "Leadership Skills",
+    description:
+      "Cultivates leadership through training, exercises, and real-world challenges.",
     icon: DumbbellIcon,
   },
   {
-    title: "Patriotism & Nation-building",
+    title: "Teamwork & Communication",
     description:
-      "Instills love for the nation and encourages active contribution to its development and progress.",
+      "Enhances teamwork, cooperation, and effective communication skills.",
+    icon: HandshakeIcon,
+  },
+  {
+    title: "Patriotism",
+    description:
+      "Instills love for the nation and encourages active contribution to its progress.",
     icon: FlagIcon,
   },
   {
-    title: "Adventure & Physical Fitness",
+    title: "Adventure & Fitness",
     description:
       "Emphasizes physical fitness, mental resilience, and adventure activities.",
     icon: MountainIcon,
   },
   {
-    title: "Social Service",
+    title: "Community Service",
     description:
-      "Promotes community service and social initiatives for the betterment of society.",
+      "Encourages social initiatives and volunteer work for societal betterment.",
     icon: HeartIcon,
   },
   {
-    title: "Career Opportunities",
+    title: "Career Growth",
     description:
-      "Offers career pathways through special entry schemes and preferences in job recruitments.",
+      "Opens career pathways through special entry schemes and job preferences.",
     icon: GraduationCapIcon,
   },
 ];

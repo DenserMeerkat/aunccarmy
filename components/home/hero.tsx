@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/legacy/image";
 import Link from "next/link";
-import SectionHeading from "../common/section-heading";
+import { SectionHeadingTag } from "@/components/common/section-heading";
 import { Button, buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { heroLogos } from "@/resources/hero";
@@ -23,10 +23,10 @@ const HeroContent = () => {
 
   return (
     <div className="col-span-12 flex flex-col items-center pt-12 lg:col-span-6 lg:items-start 2xl:col-span-6">
-      <SectionHeading
-        className="mb-2"
+      <SectionHeadingTag
+        className="mx-0 bg-background/60 text-foreground"
         CustomIcon={
-          <div className="flex items-center">
+          <div className="mr-1 flex items-center">
             <Image
               width={20}
               height={15}
@@ -65,7 +65,7 @@ const HeroContent = () => {
       <div className="flex w-full max-w-sm flex-col gap-3 px-4 lg:flex-row lg:gap-4 lg:px-0">
         <Button
           size={"xl"}
-          className="w-full border-2 border-foreground/10 dark:text-foreground"
+          className="w-full border-2 border-foreground/10 dark:font-bold"
         >
           Start Your Journey
         </Button>
@@ -73,7 +73,7 @@ const HeroContent = () => {
           href="/about"
           className={cn(
             buttonVariants({ variant: "secondary", size: "xl" }),
-            "w-full border-2 border-foreground/10 ",
+            "w-full border-2 border-foreground/10 dark:font-medium",
           )}
         >
           Learn More

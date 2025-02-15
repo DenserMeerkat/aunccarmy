@@ -1,21 +1,37 @@
-import SectionHeading from "@/components/common/section-heading";
-import { InfoIcon } from "lucide-react";
+import {
+  SectionHeading,
+  SectionHeadingTag,
+} from "@/components/common/section-heading";
+import { CrosshairIcon } from "lucide-react";
 import Image from "next/image";
+import { FourCornerBoxes, RDiamond } from "@/components/common/decoration";
 
 export default function AboutNCC() {
   const nccLogo = "/images/logos/NCC_1.png";
   return (
-    <section className="mx-auto max-w-7xl py-10">
-      <SectionHeading className="mb-2" Icon={InfoIcon} title={"About NCC"} />
-      <div className="px-2">
+    <section className="relative mx-auto max-w-7xl border-collapse border py-10">
+      <FourCornerBoxes child={<RDiamond fill={"hsl(var(--muted))"} />} />
+      <SectionHeadingTag
+        className="mb-2"
+        Icon={CrosshairIcon}
+        title={"About"}
+      />
+      <SectionHeading
+        title={"What is NCC?"}
+        subtitle={
+          "A voluntary program for school and college students that provides basic military training"
+        }
+        className="pb-4 md:pb-6"
+      />
+      <div className="mx-auto max-w-5xl px-2">
         <Image
           src={nccLogo}
           alt="NCC logo"
-          height={120}
+          height={100}
           width={120}
-          className="mx-auto xs:float-left"
+          className="mx-auto"
         />
-        <p className="text-justify text-foreground/70 [word-spacing:0.16rem] md:text-lg xs:text-start">
+        <p className="text-center text-foreground/70 [word-spacing:0.16rem] md:text-lg">
           The{" "}
           <span className="font-bold tracking-wider text-foreground">
             National Cadet Corps

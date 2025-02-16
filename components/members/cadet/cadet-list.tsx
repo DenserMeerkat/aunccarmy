@@ -50,10 +50,10 @@ const CadetList = () => {
 
   return (
     <div className="relative">
-      <div className="absolute -top-[4.4rem] right-2 flex items-center justify-center gap-4">
+      <div className="-top-[4.4rem] right-2 mb-4 flex items-center justify-center gap-4 sm:absolute sm:mb-0">
         <SelectBatch onSelect={setBatch} selectedYear={batch} years={years} />
       </div>
-      <div className="my-8 space-y-12">
+      <div className="space-y-12">
         <div className="mx-auto max-w-7xl space-y-6">
           <div className="mx-auto flex w-fit flex-col gap-6">
             {organizedCadets.csuo.map((cadet) => {
@@ -107,11 +107,11 @@ export default CadetList;
 const CadetListSkeleton = () => {
   return (
     <div className="relative">
-      <div className="absolute -top-[4.4rem] right-2 flex items-center justify-center gap-4">
+      <div className="-top-[4.4rem] right-2 mb-4 flex items-center justify-center gap-4 sm:absolute sm:mb-0">
         <Skeleton className="h-[38px] w-[120px] rounded-lg" />
       </div>
 
-      <div className="mx-auto my-8 max-w-7xl space-y-6">
+      <div className="mx-auto max-w-7xl space-y-6">
         <div className="flex justify-center">
           <MemberCardSkeleton />
         </div>

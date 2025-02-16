@@ -13,7 +13,7 @@ export default function Home() {
         y={-1}
         strokeDasharray={"4 2"}
         className={cn(
-          "fixed -z-10 [mask-image:linear-gradient(to_bottom,white,transparent,transparent)] lg:[mask-image:linear-gradient(to_bottom_right,white,white,white,transparent,transparent,transparent,transparent)]",
+          "fixed -z-10 stroke-foreground/10 [mask-image:linear-gradient(to_bottom,white,transparent,transparent,white)]",
         )}
       />
       <Hero />

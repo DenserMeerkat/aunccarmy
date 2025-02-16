@@ -34,7 +34,7 @@ export default function MainNav({ className }: { className?: string }) {
                 data-id={item.title}
                 className={cn(
                   "rounded-xl font-semibold tracking-wide text-muted-foreground transition-colors duration-300 hover:text-foreground",
-                  isActive ? "bg-muted/60 text-foreground" : "",
+                  isActive ? "bg-muted/60 text-primary" : "",
                 )}
               >
                 <Link href={item.href} className="px-4 py-1 lg:px-5">

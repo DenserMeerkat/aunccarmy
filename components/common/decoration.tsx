@@ -11,7 +11,7 @@ export const CornerBox = ({
   return (
     <div
       className={cn(
-        "absolute grid h-6 w-6 place-content-center bg-background p-1 text-border",
+        "absolute grid h-6 w-6 place-content-center rounded-full p-1 text-border",
         className,
       )}
     >
@@ -20,19 +20,73 @@ export const CornerBox = ({
   );
 };
 
-export const FourCornerBoxes = ({ child }: { child?: React.ReactNode }) => {
+export const FourCornerBoxes = ({
+  child,
+  className,
+}: {
+  child?: React.ReactNode;
+  className?: string;
+}) => {
   return (
     <>
-      <CornerBox className="left-top-corner">{child}</CornerBox>
-      <CornerBox className="right-top-corner">{child}</CornerBox>
-      <CornerBox className="left-bottom-corner">{child}</CornerBox>
-      <CornerBox className="right-bottom-corner">{child}</CornerBox>
+      <CornerBox className={cn("left-top-corner", className)}>
+        {child}
+      </CornerBox>
+      <CornerBox className={cn("right-top-corner", className)}>
+        {child}
+      </CornerBox>
+      <CornerBox className={cn("left-bottom-corner", className)}>
+        {child}
+      </CornerBox>
+      <CornerBox className={cn("right-bottom-corner", className)}>
+        {child}
+      </CornerBox>
+    </>
+  );
+};
+
+export const TopCornerBoxes = ({
+  child,
+  className,
+}: {
+  child?: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <>
+      <CornerBox className={cn("left-top-corner", className)}>
+        {child}
+      </CornerBox>
+      <CornerBox className={cn("right-top-corner", className)}>
+        {child}
+      </CornerBox>
+    </>
+  );
+};
+
+export const BottomCornerBoxes = ({
+  child,
+  className,
+}: {
+  child?: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <>
+      <CornerBox className={cn("left-bottom-corner", className)}>
+        {child}
+      </CornerBox>
+      <CornerBox className={cn("right-bottom-corner", className)}>
+        {child}
+      </CornerBox>
     </>
   );
 };
 
 export const RDot = ({ className }: { className?: string }) => {
-  return <div className={cn("h-1 w-1 rounded-full bg-border", className)} />;
+  return (
+    <div className={cn("bg-subtleAccent h-1 w-1 rounded-full", className)} />
+  );
 };
 
 export const RPlus = ({
@@ -40,13 +94,27 @@ export const RPlus = ({
   size = 18,
   ...props
 }: React.SVGProps<SVGSVGElement> & { size?: number }) => {
-  return <Plus className={className} size={size} {...props} />;
+  return (
+    <Plus
+      className={cn("text-subtleAccent", className)}
+      size={size}
+      {...props}
+    />
+  );
 };
 
 export const RDiamond = ({
   className,
-  size = 16,
+  size = 14,
+  isFilled = true,
   ...props
-}: React.SVGProps<SVGSVGElement> & { size?: number }) => {
-  return <Diamond className={className} size={size} {...props} />;
+}: React.SVGProps<SVGSVGElement> & { size?: number; isFilled?: boolean }) => {
+  return (
+    <Diamond
+      className={cn("text-subtleAccent", className)}
+      size={size}
+      fill={isFilled ? `hsl(var(--background))` : props.fill}
+      {...props}
+    />
+  );
 };

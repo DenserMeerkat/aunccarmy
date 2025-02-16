@@ -4,9 +4,9 @@ import { FourCornerBoxes, RPlus } from "@/components/common/decoration";
 
 const AboutVideo = () => {
   return (
-    <section className="mx-auto max-w-7xl border-b border-l border-r py-10">
+    <section className="mx-auto max-w-8xl border-x border-b py-10">
       <div className="relative mx-auto max-w-5xl border bg-muted/40 p-4">
-        <FourCornerBoxes child={<RPlus />} />
+        <FourCornerBoxes className="border bg-background" child={<RPlus />} />
         <HeroVideoDialog
           className="rounded-xl"
           animationStyle="from-center"

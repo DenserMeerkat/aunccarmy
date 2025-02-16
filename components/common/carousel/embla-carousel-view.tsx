@@ -125,8 +125,16 @@ const EmblaCarousel: React.FC<CarouselPropType> = ({
           }
 
           const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
-          const opacity = numberWithinRange(tweenValue, 0, 1).toString();
+          const opacity = numberWithinRange(tweenValue, 0.3, 1).toString();
+          const parentOpacity = parseFloat(opacity);
+          const childOpacity = 1 - parentOpacity;
           emblaApi.slideNodes()[slideIndex].style.opacity = opacity;
+          const childDiv = emblaApi
+            .slideNodes()
+            [slideIndex].querySelector(".mask") as HTMLElement;
+          if (childDiv) {
+            childDiv.style.opacity = childOpacity.toString();
+          }
         });
       });
     },
@@ -156,7 +164,7 @@ const EmblaCarousel: React.FC<CarouselPropType> = ({
         >
           {slides.map((slide, index) => (
             <div
-              className={`translate-z-0 h-auto min-w-0 translate-x-0 translate-y-0 transform`}
+              className={`translate-z-0 relative h-auto min-w-0 translate-x-0 translate-y-0 transform`}
               style={{
                 paddingLeft: slideSpacing,
                 flex: `0 0 ${slideWidth}`,
@@ -165,6 +173,7 @@ const EmblaCarousel: React.FC<CarouselPropType> = ({
               }}
               key={index}
             >
+              <div className="mask absolute inset-0 rounded-xl bg-[radial-gradient(transparent_1px,var(--token-f32baa44-90b8-42a5-8bca-ffba9d95b23a,hsl(var(--background)))_1px)] bg-[length:4px_4px] backdrop-blur-sm" />
               <div
                 className={`h-full select-none overflow-clip rounded-2xl bg-primary/10`}
               >

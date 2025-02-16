@@ -7,10 +7,10 @@ import Image from "next/image";
 import { FourCornerBoxes, RDiamond } from "@/components/common/decoration";
 
 export default function AboutNCC() {
-  const nccLogo = "/images/logos/NCC_1.png";
+  const nccLogo = "/images/logos/NCC_F_1.png";
   return (
-    <section className="relative mx-auto max-w-7xl border-collapse border py-10">
-      <FourCornerBoxes child={<RDiamond fill={"hsl(var(--muted))"} />} />
+    <section className="relative mx-auto max-w-8xl border-collapse border py-10">
+      <FourCornerBoxes child={<RDiamond />} />
       <SectionHeadingTag
         className="mb-2"
         Icon={CrosshairIcon}
@@ -27,9 +27,9 @@ export default function AboutNCC() {
         <Image
           src={nccLogo}
           alt="NCC logo"
-          height={100}
-          width={120}
-          className="mx-auto"
+          height={105}
+          width={140}
+          className="mx-auto mb-4"
         />
         <p className="text-center text-foreground/70 [word-spacing:0.16rem] md:text-lg">
           The{" "}

@@ -21,11 +21,11 @@ const SelectBatch = ({ onSelect, selectedYear, years }: SelectBatchProps) => {
       onValueChange={(value) => onSelect(Number(value))}
     >
       <RTooltip content="Select batch">
-        <SelectTrigger className="xs:w-[120px]">
-          <SelectValue />
+        <SelectTrigger className="w-[120px] bg-background">
+          <SelectValue>{selectedYear}</SelectValue>
         </SelectTrigger>
       </RTooltip>
-      <SelectContent align="end">
+      <SelectContent align="center">
         <SelectGroup>
           {years.map((year) => (
             <SelectItem key={year} value={year.toString()}>

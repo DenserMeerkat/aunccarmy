@@ -36,7 +36,7 @@ const AnoList = () => {
   const { active: activeAnos, alumni: alumniAnos } = getOrganizedAnos(anos);
 
   return (
-    <div className="my-8 space-y-12">
+    <div className="space-y-12">
       <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-6">
         {activeAnos.map((ano) => {
           return <AnoCard key={ano.id} ano={ano} />;
@@ -56,7 +56,7 @@ export default AnoList;
 const AnoListSkeleton = () => {
   const cardCount = Array.from({ length: 6 }, (_, i) => i);
   return (
-    <div className="mx-auto my-8 flex max-w-7xl flex-wrap justify-center gap-x-6 gap-y-12">
+    <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-6 gap-y-12">
       {cardCount.map((_, i) => (
         <MemberCardSkeleton key={i} />
       ))}

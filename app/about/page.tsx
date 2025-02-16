@@ -16,10 +16,10 @@ export default function About() {
         y={-1}
         strokeDasharray={"4 2"}
         className={cn(
-          "fixed -z-10 stroke-foreground/10 [mask-image:linear-gradient(to_bottom,white,transparent,transparent)]",
+          "fixed -z-10 stroke-foreground/10 [mask-image:radial-gradient(300px_circle_at_center,transparent,white,transparent)] lg:[mask-image:radial-gradient(600px_circle_at_center,transparent,transparent,white,white,transparent)]",
         )}
       />
-      <section className="mx-auto max-w-7xl px-2">
+      <section className="mx-auto max-w-8xl px-2">
         <AboutVideo />
         <AboutNCC />
         <Objectives />

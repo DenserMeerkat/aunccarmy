@@ -7,7 +7,7 @@ import { navItems } from "@/constants";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import RTooltip from "@/components/common/tooltip";
 
 const NavSheet = ({ className }: { className?: string }) => {

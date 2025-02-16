@@ -31,18 +31,32 @@ export const SectionHeading = ({
   title,
   subtitle,
   className,
+  titleClassName,
+  subtitleClassName,
 }: {
   title: string;
   subtitle?: string;
   className?: string;
+  titleClassName?: string;
+  subtitleClassName?: string;
 }) => {
   return (
     <div className={cn("flex flex-col items-center pb-8 md:pb-10", className)}>
-      <h2 className="max-w-xl pb-3 text-center text-3xl font-bold md:pb-4 md:text-5xl">
+      <h2
+        className={cn(
+          "max-w-2xl pb-3 text-center text-3xl font-bold md:pb-4 md:text-5xl",
+          titleClassName,
+        )}
+      >
         {title}
       </h2>
       {subtitle && (
-        <p className="max-w-xl text-center text-muted-foreground md:text-lg">
+        <p
+          className={cn(
+            "max-w-xl text-center text-muted-foreground md:text-lg",
+            subtitleClassName,
+          )}
+        >
           {subtitle}
         </p>
       )}

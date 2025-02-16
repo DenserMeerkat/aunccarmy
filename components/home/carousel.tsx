@@ -42,9 +42,7 @@ const HomeCarousel = () => {
   }
 
   return (
-    <div className="max-w-9xl relative overflow-x-clip bg-background px-4 pt-2">
-      <div className="absolute left-0 z-20 h-full bg-gradient-to-r from-background xl:w-32" />
-      <div className="absolute right-0 z-20 h-full bg-gradient-to-l from-background xl:w-32" />
+    <div className="max-w-9xl relative overflow-x-clip border-y bg-background px-4 pt-6">
       <div className="mx-auto max-w-6xl">
         <EmblaCarousel
           slides={slides}
@@ -65,20 +63,36 @@ export default HomeCarousel;
 
 export const HomeCarouselSkeleton = () => {
   return (
-    <div
-      className="mx-auto my-8 flex max-w-7xl"
-      style={{
-        gap: slideSpacing,
-      }}
-    >
-      <Skeleton className="h-auto w-[7.5%]" />
-      <Skeleton
-        className="w-[85%]"
+    <div className="max-w-9xl relative overflow-x-clip border-y bg-background px-2 pt-6">
+      <div
+        className="mx-auto flex max-w-7xl py-2"
         style={{
-          aspectRatio: slideAspectRatio,
+          gap: slideSpacing,
         }}
-      />
-      <Skeleton className="h-auto w-[7.5%]" />
+      >
+        <Skeleton className="h-auto w-[7.5%]" />
+        <Skeleton
+          className="w-[85%]"
+          style={{
+            aspectRatio: slideAspectRatio,
+          }}
+        />
+        <Skeleton className="h-auto w-[7.5%]" />
+      </div>
+      <div className="mx-auto flex max-w-6xl items-center justify-between pb-4 pt-3">
+        <div className="flex gap-2">
+          <Skeleton className="h-9 w-9 rounded-full" />
+          <Skeleton className="h-9 w-9 rounded-full" />
+          <Skeleton className="h-9 w-9 rounded-full" />
+        </div>
+        <div className="flex gap-1.5">
+          <Skeleton className="h-4 w-4 rounded-full" />
+          <Skeleton className="h-4 w-4 rounded-full" />
+          <Skeleton className="h-4 w-4 rounded-full" />
+          <Skeleton className="h-4 w-4 rounded-full" />
+          <Skeleton className="h-4 w-4 rounded-full" />
+        </div>
+      </div>
     </div>
   );
 };

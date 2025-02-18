@@ -7,7 +7,7 @@ import Image from "next/image";
 import { FourCornerBoxes, RDiamond } from "@/components/common/decoration";
 
 export default function AboutNCC() {
-  const nccLogo = "/images/logos/NCC_F_1.png";
+  const nccLogo = "/images/logos/ncc_f_1.png";
   return (
     <section className="relative mx-auto max-w-8xl border-collapse border py-10">
       <FourCornerBoxes child={<RDiamond />} />

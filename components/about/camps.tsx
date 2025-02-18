@@ -25,10 +25,10 @@ const Camps = () => {
         <SectionHeadingTag
           Icon={TentIcon}
           title="Camps in NCC"
-          className="mb-2"
+          className="mb-6"
         />
 
-        <div className="mx-auto grid max-w-md grid-cols-12 gap-0 bg-background pt-4 md:max-w-5xl">
+        <div className="mx-auto grid max-w-md grid-cols-12 gap-0 bg-background md:max-w-5xl">
           <div className="relative col-span-12 border border-b-0 p-4 md:col-span-5 md:border-b md:border-r-0">
             <FourCornerBoxes child={<RPlus />} />
             <div className="flex h-full flex-col justify-between gap-4 md:pb-2 lg:gap-4">

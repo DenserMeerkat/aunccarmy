@@ -32,7 +32,7 @@ const Hero = () => {
 };
 
 const HeroContent = () => {
-  const nccFlag = "/images/logos/NCC_F_1.png";
+  const nccFlag = "/images/logos/ncc_f_1.png";
 
   return (
     <div className="col-span-12 flex flex-col items-center pb-12 pt-12 lg:col-span-6 lg:items-start lg:pb-2 2xl:col-span-6">

@@ -113,7 +113,7 @@ export function HeroVideoDialog({
             animate={{ opacity: 1 }}
             onClick={() => setIsVideoOpen(false)}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[150] flex items-center justify-center bg-black/50 backdrop-blur-md"
+            className="fixed inset-0 z-[150] flex items-center justify-center bg-[radial-gradient(transparent_1px,var(--token-f32baa44-90b8-42a5-8bca-ffba9d95b23a,hsl(var(--background))))] bg-[length:4px_4px] backdrop-blur-lg"
           >
             <motion.div
               {...selectedAnimation}

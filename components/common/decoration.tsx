@@ -85,7 +85,7 @@ export const BottomCornerBoxes = ({
 
 export const RDot = ({ className }: { className?: string }) => {
   return (
-    <div className={cn("bg-subtleAccent h-1 w-1 rounded-full", className)} />
+    <div className={cn("h-1 w-1 rounded-full bg-subtleAccent", className)} />
   );
 };
 
@@ -116,5 +116,16 @@ export const RDiamond = ({
       fill={isFilled ? `hsl(var(--background))` : props.fill}
       {...props}
     />
+  );
+};
+
+export const FourDots = ({ className }: { className?: string }) => {
+  return (
+    <>
+      <RDot className={cn("absolute left-2 top-2", className)} />
+      <RDot className={cn("absolute right-2 top-2", className)} />
+      <RDot className={cn("absolute bottom-2 left-2", className)} />
+      <RDot className={cn("absolute bottom-2 right-2", className)} />
+    </>
   );
 };

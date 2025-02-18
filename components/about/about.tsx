@@ -31,7 +31,7 @@ export default function AboutNCC() {
           width={140}
           className="mx-auto mb-4"
         />
-        <p className="text-center text-foreground/70 [word-spacing:0.16rem] md:text-lg">
+        <p className="text-center [word-spacing:0.16rem] dark:text-muted-foreground md:text-lg">
           The{" "}
           <span className="font-bold tracking-wider text-foreground">
             National Cadet Corps

@@ -69,7 +69,7 @@ const HeroContent = () => {
         </h1>
       </div>
       <br />
-      <p className="max-w-md px-1 pr-2 text-center text-sm font-medium text-foreground/60 dark:font-normal md:max-w-xl lg:text-start lg:text-base">
+      <p className="max-w-md px-1 pr-2 text-center text-sm font-medium text-muted-foreground dark:font-normal md:max-w-xl lg:text-start lg:text-base">
         Prepare for a lifetime of leadership and excellence. Embrace challenges,
         seize opportunities, and create lasting memories on a journey of courage
         and service.
@@ -134,7 +134,7 @@ const HeroFooter = () => (
       ))}
     </div>
     <div className="px-4 pb-6">
-      <p className="mx-auto max-w-2xl text-center text-sm font-medium text-foreground/60 dark:font-normal sm:text-base">
+      <p className="mx-auto max-w-2xl text-center text-sm font-medium text-muted-foreground dark:font-normal sm:text-base">
         Creating organized, trained, and motivated youth, equipped to provide
         leadership in every sphere of life, and unwaveringly committed to
         serving our nation.

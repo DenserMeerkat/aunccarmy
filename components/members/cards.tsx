@@ -37,7 +37,7 @@ export const MemberCard = (props: any) => {
           </div>
           <h3 className="max-w-44 text-center text-sm font-bold">{name}</h3>
         </div>
-        <div className="self-start pl-3 text-left text-xs font-medium text-muted-foreground xs:pl-4">
+        <div className="self-start pl-3 text-left text-xs font-medium dark:text-muted-foreground xs:pl-4">
           <p className="mb-1 font-semibold text-foreground">{desig}</p>
           <p>{dept}</p>
           <span>Anna University</span>

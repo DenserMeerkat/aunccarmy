@@ -7,13 +7,12 @@ import {
 import { objectives } from "@/constants";
 import {
   FourCornerBoxes,
+  FourDots,
   RDiamond,
-  RDot,
   RPlus,
 } from "@/components/common/decoration";
 import { motion } from "motion/react";
 import GridPattern from "@/components/ui/grid-pattern";
-import { cn } from "@/lib/utils";
 
 const Objectives = () => {
   return (
@@ -27,7 +26,7 @@ const Objectives = () => {
         title={"What are its Objectives?"}
         subtitle={"Guiding Youth Towards Growth and Excellence"}
       />
-      <div className="relative border-collapse border-b border-t">
+      <div className="relative mb-8 border-collapse border-y">
         <FourCornerBoxes child={<RDiamond />} />
         <div className="mx-auto grid max-w-sm grid-cols-2 justify-center md:max-w-4xl md:grid-cols-4">
           {objectives.map((objective, index) => (
@@ -61,10 +60,7 @@ const ObjectiveCard = ({
       <div className="h-44 overflow-clip rounded-2xl border bg-muted/20 p-2 drop-shadow-md md:p-3">
         <div className="flex h-full flex-col items-center justify-center gap-4">
           <div className="relative grid h-20 w-20 place-content-center rounded-xl border-2 bg-muted/60 p-4 text-muted-foreground">
-            <RDot className="absolute left-2 top-2 bg-muted-foreground/30" />
-            <RDot className="absolute right-2 top-2 bg-muted-foreground/30" />
-            <RDot className="absolute bottom-2 left-2 bg-muted-foreground/30" />
-            <RDot className="absolute bottom-2 right-2 bg-muted-foreground/30" />
+            <FourDots className="bg-muted-foreground/30" />
             <Icon className="h-10 w-10 " />
           </div>
           <div className="grid h-8 max-w-32 place-content-center">
@@ -87,10 +83,7 @@ const ObjectiveCard = ({
               strokeDasharray={"4 2"}
               className="opacity-30"
             />
-            <RDot className="absolute left-2.5 top-2.5 h-1.5 w-1.5 bg-primary/60 md:left-4 md:top-4" />
-            <RDot className="absolute right-2.5 top-2.5 h-1.5 w-1.5 bg-primary/60 md:right-4 md:top-4" />
-            <RDot className="absolute bottom-2.5 left-2.5 h-1.5 w-1.5 bg-primary/60 md:bottom-4 md:left-4" />
-            <RDot className="absolute bottom-2.5 right-2.5 h-1.5 w-1.5 bg-primary/60 md:bottom-4 md:right-4" />
+            <FourDots className="h-1.5 w-1.5 bg-primary/60" />
             <p className="text-center text-sm font-semibold text-foreground md:text-base">
               {title}
             </p>

@@ -5,6 +5,7 @@ import AboutNCC from "@/components/about/about";
 import Objectives from "@/components/about/objectives";
 import GridPattern from "@/components/ui/grid-pattern";
 import { cn } from "@/lib/utils";
+import Camps from "@/components/about/camps";
 
 export default function About() {
   return (
@@ -23,6 +24,7 @@ export default function About() {
         <AboutVideo />
         <AboutNCC />
         <Objectives />
+        <Camps />
       </section>
     </div>
   );

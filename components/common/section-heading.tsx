@@ -15,14 +15,14 @@ export const SectionHeadingTag = ({
   return (
     <div
       className={cn(
-        "mx-auto flex w-fit items-center rounded-full border bg-muted/50 px-4 py-1.5 text-primary shadow-xl",
+        "mx-auto flex w-fit items-center rounded-full border bg-muted/50 px-4 py-1.5 text-primary shadow-lg",
         className,
       )}
     >
       <div className="mr-2 flex items-center ">
         {CustomIcon ? CustomIcon : Icon && <Icon className="h-3.5 w-3.5" />}
       </div>
-      <h2 className="text-sm font-semibold tracking-wide">{title}</h2>
+      <span className="text-sm font-semibold tracking-wide">{title}</span>
     </div>
   );
 };
@@ -53,7 +53,7 @@ export const SectionHeading = ({
       {subtitle && (
         <p
           className={cn(
-            "max-w-xl text-center text-muted-foreground md:text-lg",
+            "max-w-xl text-center dark:text-muted-foreground md:text-lg",
             subtitleClassName,
           )}
         >

@@ -26,6 +26,7 @@
     "embla-carousel-autoplay": "^8.5.1",
     "embla-carousel-react": "^8.5.1",
     "lucide-react": "^0.321.0",
+    "markdown-to-jsx": "^7.7.4",
     "motion": "^12.4.2",
     "next": "14.2.15",
     "next-cloudinary": "^6.16.0",
@@ -41,7 +42,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
     "@types/react": "^18",

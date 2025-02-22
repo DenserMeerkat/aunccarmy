@@ -9,7 +9,7 @@ import Camps from "@/components/about/camps";
 
 export default function About() {
   return (
-    <div className="h-fit">
+    <main className="mx-auto max-w-8xl px-2">
       <GridPattern
         width={40}
         height={40}
@@ -20,12 +20,10 @@ export default function About() {
           "fixed -z-10 stroke-foreground/10 [mask-image:radial-gradient(300px_circle_at_center,transparent,white,transparent)] lg:[mask-image:radial-gradient(600px_circle_at_center,transparent,transparent,white,white,transparent)]",
         )}
       />
-      <section className="mx-auto max-w-8xl px-2">
-        <AboutVideo />
-        <AboutNCC />
-        <Objectives />
-        <Camps />
-      </section>
-    </div>
+      <AboutVideo />
+      <AboutNCC />
+      <Objectives />
+      <Camps />
+    </main>
   );
 }

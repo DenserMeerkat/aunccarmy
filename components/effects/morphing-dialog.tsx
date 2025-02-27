@@ -243,7 +243,7 @@ function MorphingDialogContainer({ children }: MorphingDialogContainerProps) {
         <>
           <motion.div
             key={`backdrop-${uniqueId}`}
-            className="backdrop-blur-xs fixed inset-0 z-[120] h-full w-full bg-[radial-gradient(transparent_1px,var(--token-f32baa44-90b8-42a5-8bca-ffba9d95b23a,hsl(var(--background))))] bg-[length:4px_4px] backdrop-blur-lg"
+            className="fixed inset-0 z-[120] h-full w-full bg-[radial-gradient(transparent_1px,var(--token-f32baa44-90b8-42a5-8bca-ffba9d95b23a,hsl(var(--background))))] bg-[length:4px_4px] backdrop-blur-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -399,13 +399,13 @@ function MorphingDialogClose({
       type="button"
       aria-label="Close dialog"
       key={`dialog-close-${uniqueId}`}
-      className={cn("absolute right-6 top-6", className)}
+      className={cn("absolute right-4 top-4 rounded-full p-1.5", className)}
       initial="initial"
       animate="animate"
       exit="exit"
       variants={variants}
     >
-      {children || <XIcon size={24} />}
+      {children || <XIcon size={20} />}
     </motion.button>
   );
 }

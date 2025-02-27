@@ -21,7 +21,7 @@ export default function Cadets() {
           <SectionHeading
             title={"Meet our Cadet Leaders"}
             titleClassName="text-2xl md:text-4xl"
-            subtitle={"The Unity and Spirit of Our Wing"}
+            subtitle={"The Unity and Spirit of our Wing"}
           />
           <Suspense>
             <CadetList />

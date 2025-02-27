@@ -12,9 +12,9 @@ export default function Officers() {
         <div className="mx-auto max-w-7xl">
           <SectionHeadingTag className="mb-2" Icon={StarIcon} title={"ANOs"} />
           <SectionHeading
-            title={"Guiding Lights of our Wing"}
+            title={"Meet our Dedicated Officers"}
             titleClassName="text-2xl md:text-4xl"
-            subtitle="Inspiring, Mentoring, and Shaping Future Leaders"
+            subtitle="Guiding Lights of our Wing"
           />
           <AnoList />
         </div>

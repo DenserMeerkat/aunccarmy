@@ -1,10 +1,11 @@
 import StandoutEvents from "@/components/events/standout";
+import Reports from "@/components/reports/reports";
 import GridPattern from "@/components/ui/grid-pattern";
 import { cn } from "@/lib/utils";
 
 export default function Events() {
   return (
-    <main className="mx-auto max-w-8xl px-2">
+    <main className="mx-auto min-h-[90lvh] max-w-8xl px-2">
       <GridPattern
         width={40}
         height={40}
@@ -16,6 +17,7 @@ export default function Events() {
         )}
       />
       <StandoutEvents />
+      <Reports />
     </main>
   );
 }

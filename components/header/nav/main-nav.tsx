@@ -27,7 +27,8 @@ export default function MainNav({ className }: { className?: string }) {
           enableHover
         >
           {navItems.map((item, index) => {
-            const isActive = pathname == item.href;
+            const isActive =
+              pathname === item.href || pathname.startsWith(`${item.href}/`);
             return (
               <li
                 key={index}

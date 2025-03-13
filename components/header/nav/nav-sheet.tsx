@@ -59,25 +59,32 @@ const NavSheet = ({ className }: { className?: string }) => {
             value={pathname}
             className="w-full flex-col gap-0 border-b-2 border-dashed border-muted "
           >
-            {navItems.map((item, index: number) => (
-              <Link
-                key={item.title}
-                href={item.href}
-                className="w-full border-t-2 border-dashed border-muted "
-              >
-                <ToggleGroupItem
-                  size={"default"}
-                  value={item.href}
-                  className={cn(
-                    "w-full justify-start rounded-none px-5 py-6 pt-7 text-lg font-medium tracking-wide hover:bg-muted/40 hover:text-foreground data-[state=on]:bg-muted/60 data-[state=on]:font-bold",
-                    pathname == item.href ? "pointer-events-none" : "",
-                  )}
-                  asChild
-                >
-                  <span>{item.title}</span>
-                </ToggleGroupItem>
-              </Link>
-            ))}
+            {navItems.map(
+              (item: { href: string; title: string }, index: number) => {
+                const isActive =
+                  pathname === item.href ||
+                  pathname.startsWith(`${item.href}/`);
+                return (
+                  <Link
+                    key={item.title}
+                    href={item.href}
+                    className="w-full border-t-2 border-dashed border-muted"
+                  >
+                    <ToggleGroupItem
+                      size="default"
+                      value={item.href}
+                      className={cn(
+                        "w-full justify-start rounded-none px-5 py-6 pt-7 text-lg font-medium tracking-wide hover:bg-muted/40 hover:text-foreground data-[state=on]:bg-muted/60 data-[state=on]:font-bold",
+                        isActive ? "pointer-events-none" : "",
+                      )}
+                      asChild
+                    >
+                      <span>{item.title}</span>
+                    </ToggleGroupItem>
+                  </Link>
+                );
+              },
+            )}
           </ToggleGroup>
         </nav>
       </motion.div>

@@ -7,7 +7,7 @@ import { AppStateProvider } from "@/components/context-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-const ReactQueryProvider = ({ children }: { children: React.ReactNode }) => {
+const Providers = ({ children }: { children: React.ReactNode }) => {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
@@ -26,4 +26,4 @@ const ReactQueryProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default ReactQueryProvider;
+export default Providers;

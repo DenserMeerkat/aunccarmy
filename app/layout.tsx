@@ -3,7 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import ReactQueryProvider from "./providers";
+import Providers from "./providers";
 import { cn } from "@/lib/utils";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -24,13 +24,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={cn(plusJakartaSans.className, "min-w-[320px]")}>
-        <ReactQueryProvider>
+        <Providers>
           <Header />
           {children}
           <Footer />
-        </ReactQueryProvider>
+        </Providers>
       </body>
     </html>
   );

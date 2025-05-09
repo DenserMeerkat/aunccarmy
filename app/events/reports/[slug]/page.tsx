@@ -16,9 +16,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const [report] = await getReportBySlug(params.slug);
+  const { slug } = await params;
+  const [report] = await getReportBySlug(slug);
 
   if (!report) return;
 
@@ -59,9 +60,10 @@ export async function generateMetadata({
 export default async function ReportPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const [report] = await getReportBySlug(params.slug);
+  const { slug } = await params;
+  const [report] = await getReportBySlug(slug);
 
   if (!report) return notFound();
 

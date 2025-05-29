@@ -79,13 +79,13 @@ export const HomeCarouselSkeleton = () => {
         />
         <Skeleton className="h-auto w-[7.5%]" />
       </div>
-      <div className="mx-auto flex max-w-6xl items-center justify-between pb-4 pt-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-center pb-4 pt-3 sm:justify-between">
         <div className="flex gap-2">
           <Skeleton className="h-9 w-9 rounded-full" />
           <Skeleton className="h-9 w-9 rounded-full" />
           <Skeleton className="h-9 w-9 rounded-full" />
         </div>
-        <div className="flex gap-1.5">
+        <div className="hidden gap-1.5 sm:flex">
           <Skeleton className="h-4 w-4 rounded-full" />
           <Skeleton className="h-4 w-4 rounded-full" />
           <Skeleton className="h-4 w-4 rounded-full" />

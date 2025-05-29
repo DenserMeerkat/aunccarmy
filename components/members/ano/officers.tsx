@@ -10,7 +10,11 @@ export default function Officers() {
     <section className="mx-auto max-w-8xl px-2">
       <div className="border-x py-8">
         <div className="mx-auto max-w-7xl">
-          <SectionHeadingTag className="mb-2" Icon={StarIcon} title={"ANOs"} />
+          <SectionHeadingTag
+            className="mb-2"
+            Icon={StarIcon}
+            title={"Officers"}
+          />
           <SectionHeading
             title={"Meet our Dedicated Officers"}
             titleClassName="text-2xl md:text-4xl"

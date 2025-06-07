@@ -1,7 +1,7 @@
 # Anna University NCC Army Wing
 
 <div align="center">
-  <img src="https://img.shields.io/badge/NCC-Army%20Wing-green?style=for-the-badge" alt="NCC Badge"/>
+  <img src="https://img.shields.io/badge/NCC-Army%20Wing-red?style=for-the-badge" alt="NCC Badge"/>
   <img src="https://img.shields.io/badge/Anna%20University-Chennai-blue?style=for-the-badge" alt="Anna University"/>
 </div>
 <br/>

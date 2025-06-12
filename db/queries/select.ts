@@ -5,11 +5,13 @@ import { db } from "../index";
 import {
   SelectAno,
   SelectCadet,
+  SelectPoster,
   SelectReport,
   SelectSlide,
   anoTable,
   cadetTable,
   carouselTable,
+  posterTable,
   reportsTable,
 } from "../schema";
 
@@ -73,4 +75,8 @@ export async function getYears(): Promise<number[]> {
     .groupBy(sql`year`);
 
   return res.map((item) => item.year);
+}
+
+export async function getPosters(): Promise<SelectPoster[]> {
+  return db.select().from(posterTable).orderBy(desc(posterTable.date));
 }

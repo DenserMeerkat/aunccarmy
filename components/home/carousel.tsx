@@ -16,6 +16,7 @@ const HomeCarousel = () => {
   const [slides, setSlides] = useState<Slide[]>([]);
 
   const { isPending, mutate: getSlides } = useMutation({
+    mutationKey: ["getCarousel"],
     mutationFn: getCarousel,
     onSuccess: (data) => {
       const _slides: Slide[] = data.map((slide, index) => {

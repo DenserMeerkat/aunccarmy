@@ -11,6 +11,7 @@ const ReportList = () => {
   const [reports, setReports] = useState<ReportMeta[]>([]);
 
   const { isPending, mutate: fetchReports } = useMutation({
+    mutationKey: ["getReports"],
     mutationFn: getReports,
     onSuccess: (data) => {
       setReports(data);

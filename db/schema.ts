@@ -91,3 +91,19 @@ export const cadetTable = pgTable("cadet", {
 });
 
 export type SelectCadet = typeof cadetTable.$inferSelect;
+
+export const posterTable = pgTable("poster", {
+  id: serial("id").primaryKey(),
+  name: text("name").default(""),
+  public_id: text("public_id").notNull(),
+  alt: text("alt").default(""),
+  date: timestamp("date"),
+  description: text("description").default(""),
+  instagram: text("instagram").default(""),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at")
+    .notNull()
+    .$onUpdate(() => new Date()),
+});
+
+export type SelectPoster = typeof posterTable.$inferSelect;

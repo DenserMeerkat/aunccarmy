@@ -22,6 +22,7 @@ const CadetList = () => {
   );
 
   const { isPending: isYearsPending, mutate: fetchYears } = useMutation({
+    mutationKey: ["getYears"],
     mutationFn: getYears,
     onSuccess: (data) => {
       setYears(data);

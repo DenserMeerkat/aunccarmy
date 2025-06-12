@@ -11,7 +11,7 @@ import {
 } from "@/components/effects/morphing-dialog";
 import { motion } from "motion/react";
 import { FourCornerBoxes, RPlus } from "@/components/common/decoration";
-import { ArrowRightIcon, ChevronRightIcon } from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 
 const StandoutEventCard = ({
   title,

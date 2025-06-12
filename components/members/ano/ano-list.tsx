@@ -13,6 +13,7 @@ const AnoList = () => {
   const [anos, setAnos] = useState<SelectAno[]>([]);
 
   const { isPending, mutate: fetchAnos } = useMutation({
+    mutationKey: ["getAnos"],
     mutationFn: getAnos,
     onSuccess: (data) => {
       setAnos(data);

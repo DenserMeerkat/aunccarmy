@@ -1,4 +1,5 @@
 import StandoutEvents from "@/components/events/standout";
+import Posters from "@/components/posters/posters";
 import Reports from "@/components/reports/reports";
 import GridPattern from "@/components/ui/grid-pattern";
 import { cn } from "@/lib/utils";
@@ -17,6 +18,7 @@ export default function Events() {
         )}
       />
       <StandoutEvents />
+      <Posters />
       <Reports />
     </main>
   );

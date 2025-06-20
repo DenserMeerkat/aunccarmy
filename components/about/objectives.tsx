@@ -55,7 +55,7 @@ const ObjectiveCard = ({
   Icon: React.ElementType;
 }) => {
   return (
-    <div className="relative border-collapse border border-border/80 bg-background p-2.5">
+    <div className="relative border-collapse select-none border border-border/80 bg-background p-2.5">
       <FourCornerBoxes className="bg-background" child={<RPlus />} />
       <div className="h-44 overflow-clip rounded-2xl border bg-muted/20 p-2 drop-shadow-md md:p-3">
         <div className="flex h-full flex-col items-center justify-center gap-4">

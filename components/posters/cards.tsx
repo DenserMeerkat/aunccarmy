@@ -18,7 +18,7 @@ const PosterCard = (poster: SelectPoster) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="aspect-square h-auto w-[140px] cursor-pointer rounded border bg-muted sm:w-[180px] lg:w-[192px]">
+        <div className="aspect-square h-auto w-[140px] cursor-pointer rounded border bg-muted hover:scale-[1.02] sm:w-[180px] lg:w-[192px]">
           <CldImage
             src={poster.public_id}
             alt={poster.alt ?? "Poster"}
@@ -34,10 +34,10 @@ const PosterCard = (poster: SelectPoster) => {
             <CldImage
               src={poster.public_id}
               alt={poster.alt ?? "Poster"}
-              width={600}
-              height={600}
+              width={720}
+              height={720}
               aspectRatio={1}
-              className="mt-8 aspect-square w-full max-w-xl rounded object-cover lg:mt-0"
+              className="mt-8 aspect-square w-full rounded lg:mt-0"
             />
           </div>
           <div className="lg:max-w-md">

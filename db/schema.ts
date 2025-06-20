@@ -107,3 +107,19 @@ export const posterTable = pgTable("poster", {
 });
 
 export type SelectPoster = typeof posterTable.$inferSelect;
+
+export const galleryTable = pgTable("gallery", {
+  id: serial("id").primaryKey(),
+  public_id: text("public_id").notNull(),
+  alt: text("alt").default(""),
+  caption: text("caption").default(""),
+  date: timestamp("date").notNull().defaultNow(),
+  height: integer("height").notNull(),
+  width: integer("width").notNull(),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at")
+    .notNull()
+    .$onUpdate(() => new Date()),
+});
+
+export type SelectGalleryImage = typeof galleryTable.$inferSelect;

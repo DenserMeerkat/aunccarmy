@@ -105,7 +105,7 @@ export const CadetCard: React.FC<{ cadet: SelectCadet }> = ({ cadet }) => {
 export const MemberCardSkeleton = () => {
   return (
     <div className="flex aspect-[17/8] w-full max-w-96 overflow-clip border bg-gradient-to-t from-muted/80 to-muted/40 shadow-md backdrop-blur-sm xs:rounded-md">
-      <Skeleton className="grid w-60 place-items-center rounded-r-none border-r bg-background">
+      <Skeleton className="grid w-60 place-items-center rounded-none border-r bg-background">
         <SquareUser className="mx-auto my-auto h-24 w-24 text-muted" />
       </Skeleton>
       <div className="flex w-full flex-col items-center py-3 sm:py-4">

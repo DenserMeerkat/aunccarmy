@@ -27,10 +27,10 @@ export const navItems: MainNavItem[] = [
     title: "Events",
     href: "/events",
   },
-  // {
-  //   title: "Gallery",
-  //   href: "/gallery",
-  // },
+  {
+    title: "Gallery",
+    href: "/gallery",
+  },
 ];
 
 export const links = {

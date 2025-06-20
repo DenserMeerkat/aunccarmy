@@ -27,6 +27,18 @@ const NavSheet = ({ className }: { className?: string }) => {
     };
   }, [setOpen]);
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <>
       <RTooltip content={<p>Toggle Menu</p>}>
@@ -49,7 +61,7 @@ const NavSheet = ({ className }: { className?: string }) => {
         initial={{ y: "-100%", opacity: 0 }}
         animate={{ y: open ? 0 : "-100%", opacity: open ? 1 : 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="fixed inset-0 top-0 h-screen bg-background pt-16"
+        className="fixed inset-0 top-0 h-[100dvh] bg-background pt-16"
         onClick={() => setOpen(false)}
       >
         <nav className="w-full">

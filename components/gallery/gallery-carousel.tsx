@@ -44,9 +44,9 @@ export function GalleryCarousel() {
 
   return (
     <section className="mx-auto h-fit max-w-8xl px-2">
-      <div className="border-x sm:p-4 xs:p-2">
+      <div className="border-x p-2">
         <ImagesSlider
-          className="h-[24rem] w-full sm:h-[32rem] sm:rounded-lg md:h-[40rem]"
+          className="mx-auto h-[24rem] w-full max-w-7xl rounded-lg sm:h-[32rem] md:h-[36rem]"
           images={
             isDomLoaded && !isPending
               ? slides.map((slide) => slide.public_id)
@@ -97,8 +97,8 @@ export function GalleryCarousel() {
 const GalleryCarouselSkeleton = () => {
   return (
     <section className="mx-auto h-fit max-w-8xl px-2">
-      <div className="border-x sm:p-4 xs:p-2">
-        <Skeleton className="h-[40rem] w-full rounded-lg" />
+      <div className="border-x p-2">
+        <Skeleton className="mx-auto h-[24rem] w-full max-w-7xl sm:h-[32rem] sm:rounded-lg md:h-[36rem]" />
       </div>
     </section>
   );

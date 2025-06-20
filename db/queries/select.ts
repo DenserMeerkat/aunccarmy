@@ -5,12 +5,14 @@ import { db } from "../index";
 import {
   SelectAno,
   SelectCadet,
+  SelectGalleryImage,
   SelectPoster,
   SelectReport,
   SelectSlide,
   anoTable,
   cadetTable,
   carouselTable,
+  galleryTable,
   posterTable,
   reportsTable,
 } from "../schema";
@@ -79,4 +81,8 @@ export async function getYears(): Promise<number[]> {
 
 export async function getPosters(): Promise<SelectPoster[]> {
   return db.select().from(posterTable).orderBy(desc(posterTable.date));
+}
+
+export async function getGalleryImages(): Promise<SelectGalleryImage[]> {
+  return db.select().from(galleryTable).orderBy(desc(galleryTable.date));
 }

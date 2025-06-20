@@ -1,6 +1,8 @@
 import { GalleryCarousel } from "@/components/gallery/gallery-carousel";
+import GalleryGrid from "@/components/gallery/gallery-grid";
 import GridPattern from "@/components/ui/grid-pattern";
 import { cn } from "@/lib/utils";
+import "react-photo-album/rows.css";
 
 export default function Gallery() {
   return (
@@ -16,6 +18,7 @@ export default function Gallery() {
         )}
       />
       <GalleryCarousel />
+      <GalleryGrid />
     </div>
   );
 }

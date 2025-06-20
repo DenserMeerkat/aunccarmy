@@ -18,7 +18,7 @@ const PosterCard = (poster: SelectPoster) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="aspect-square h-auto w-[140px] cursor-pointer rounded border bg-muted sm:w-[180px] lg:w-[192px]">
+        <div className="aspect-square h-auto w-[140px] cursor-pointer rounded border bg-muted hover:scale-[1.02] sm:w-[180px] lg:w-[192px]">
           <CldImage
             src={poster.public_id}
             alt={poster.alt ?? "Poster"}

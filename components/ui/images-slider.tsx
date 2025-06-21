@@ -47,7 +47,7 @@ export const ImagesSlider = ({
       setLoadedImages(images);
       setLoading(false);
     }
-  }, []);
+  }, [ImageComponent, images]);
 
   const loadImages = () => {
     setLoading(true);

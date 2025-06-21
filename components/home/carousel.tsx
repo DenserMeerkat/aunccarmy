@@ -38,6 +38,7 @@ const HomeCarousel = () => {
         data.map((slide, index) => {
           return (
             <div
+              key={index}
               className={`group relative h-full cursor-pointer select-none overflow-clip rounded-2xl bg-primary/10`}
               onClick={() => handleImageClick(index)}
             >

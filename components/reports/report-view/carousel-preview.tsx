@@ -33,6 +33,7 @@ const ReportCarousel = ({ slides }: ReportCarouselProps) => {
   const _slides = validSlides.map((slide, index) => {
     return (
       <div
+        key={index}
         className={`h-full cursor-pointer select-none overflow-clip rounded-2xl bg-primary/10`}
         onClick={() => handleImageClick(index)}
       >

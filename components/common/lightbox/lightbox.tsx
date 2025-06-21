@@ -83,12 +83,12 @@ const Lightbox = forwardRef<LightboxHandle, LightboxProps>(
       document.body.style.overflow = "hidden";
     };
 
-    const closeLightbox = () => {
+    const closeLightbox = useCallback(() => {
       setIsOpen(false);
       setIsCaptionOpen(false);
       document.body.style.overflow = "";
       onClose?.();
-    };
+    }, [onClose]);
 
     useImperativeHandle(ref, () => ({ openLightbox }));
 
@@ -138,6 +138,7 @@ const Lightbox = forwardRef<LightboxHandle, LightboxProps>(
       toggleCaption,
       currentIndex,
       images,
+      closeLightbox,
     ]);
 
     const currentImage = images[currentIndex];

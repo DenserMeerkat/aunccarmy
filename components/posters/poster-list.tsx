@@ -13,7 +13,8 @@ const PosterList = () => {
 
   const { isPending, mutate: fetchPosters } = useMutation({
     mutationKey: ["getPosters"],
-    mutationFn: getPosters,
+    mutationFn: ({ page, pageSize }: { page?: number; pageSize?: number }) =>
+      getPosters({ page, pageSize }),
     onSuccess: (data) => {
       setPosters(data);
     },
@@ -25,7 +26,7 @@ const PosterList = () => {
   });
 
   useEffect(() => {
-    fetchPosters();
+    fetchPosters({ page: undefined, pageSize: undefined });
     setIsDomLoaded(true);
   }, [isDomLoaded, fetchPosters]);
 
@@ -34,7 +35,7 @@ const PosterList = () => {
   ) : (
     <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-2 md:gap-4">
       {posters.map((poster) => (
-        <PosterCard key={poster.id} {...poster} />
+        <PosterCard key={poster.id} poster={poster} />
       ))}
     </div>
   );

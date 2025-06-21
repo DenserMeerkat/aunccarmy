@@ -16,7 +16,7 @@ export const ReportCard = ({
   const { thumb } = report;
   return (
     <Link href={`events/reports/${report.slug}`} className="group">
-      <Card className="w-72 overflow-clip transition-all duration-300 group-hover:shadow-xl">
+      <Card className="w-72 overflow-clip transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-xl">
         <div className="aspect-[320/180] w-full border-b">
           {showThumbnail && (
             <>
@@ -62,7 +62,7 @@ export const ReportCard = ({
 export const ReportCardSkeleton = () => {
   return (
     <div className="h-full w-full max-w-[18rem] overflow-clip rounded-md border">
-      <Skeleton className="grid aspect-[320/180] w-full place-content-center rounded-b-none bg-muted/50">
+      <Skeleton className="grid aspect-[320/180] w-72 place-content-center rounded-b-none bg-muted/50">
         <ImageIcon className="mx-auto my-auto h-24 w-24 text-border" />
       </Skeleton>
       <div className="border-b p-4 px-3">

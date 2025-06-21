@@ -12,7 +12,8 @@ const ReportList = () => {
 
   const { isPending, mutate: fetchReports } = useMutation({
     mutationKey: ["getReports"],
-    mutationFn: getReports,
+    mutationFn: ({ page, pageSize }: { page?: number; pageSize?: number }) =>
+      getReports({ page, pageSize }),
     onSuccess: (data) => {
       setReports(data);
     },
@@ -24,7 +25,7 @@ const ReportList = () => {
   });
 
   useEffect(() => {
-    fetchReports();
+    fetchReports({ page: undefined, pageSize: undefined });
     setIsDomLoaded(true);
   }, [isDomLoaded, fetchReports]);
 

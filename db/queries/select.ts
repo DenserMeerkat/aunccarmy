@@ -19,8 +19,14 @@ import {
 
 export type ReportMeta = Partial<SelectReport>;
 
-export async function getReports(): Promise<ReportMeta[]> {
-  return db
+export async function getReports({
+  page,
+  pageSize,
+}: {
+  page?: number;
+  pageSize?: number;
+} = {}): Promise<ReportMeta[]> {
+  const baseQuery = db
     .select({
       id: reportsTable.id,
       title: reportsTable.title,
@@ -31,6 +37,13 @@ export async function getReports(): Promise<ReportMeta[]> {
     })
     .from(reportsTable)
     .orderBy(desc(reportsTable.date));
+
+  if (page !== undefined && pageSize !== undefined) {
+    const offset = (page - 1) * pageSize;
+    return baseQuery.limit(pageSize).offset(offset);
+  }
+
+  return baseQuery;
 }
 
 export async function getReportBySlug(
@@ -79,8 +92,26 @@ export async function getYears(): Promise<number[]> {
   return res.map((item) => item.year);
 }
 
-export async function getPosters(): Promise<SelectPoster[]> {
-  return db.select().from(posterTable).orderBy(desc(posterTable.date));
+export async function getPosters({
+  page,
+  pageSize,
+}: {
+  page?: number;
+  pageSize?: number;
+}): Promise<SelectPoster[]> {
+  {
+    const baseQuery = db
+      .select()
+      .from(posterTable)
+      .orderBy(desc(posterTable.date));
+
+    if (page !== undefined && pageSize !== undefined) {
+      const offset = (page - 1) * pageSize;
+      return baseQuery.limit(pageSize).offset(offset);
+    }
+
+    return baseQuery;
+  }
 }
 
 export async function getGalleryImages(): Promise<SelectGalleryImage[]> {

@@ -13,12 +13,26 @@ import CldImage from "../common/cld-image";
 import { format } from "date-fns";
 import { Button } from "../ui/button";
 import { Skeleton } from "../ui/skeleton";
+import { cn } from "@/lib/utils";
 
-const PosterCard = (poster: SelectPoster) => {
+const PosterCard = ({
+  poster,
+  isCarouselCard = false,
+}: {
+  poster: SelectPoster;
+  isCarouselCard?: boolean;
+}) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="aspect-square h-auto w-[140px] cursor-pointer rounded border bg-muted hover:scale-[1.02] sm:w-[180px] lg:w-[192px]">
+        <div
+          className={cn(
+            "aspect-square h-auto cursor-pointer rounded border bg-muted transition-all duration-300 hover:scale-[1.02] hover:shadow-xl",
+            isCarouselCard
+              ? "w-[290px]"
+              : "w-[140px] sm:w-[180px] lg:w-[192px]",
+          )}
+        >
           <CldImage
             src={poster.public_id}
             alt={poster.alt ?? "Poster"}
@@ -79,8 +93,24 @@ const PosterCard = (poster: SelectPoster) => {
 
 export default PosterCard;
 
-export const PosterCardSkeleton = () => {
+export const PosterCardSkeleton = ({
+  isCarouselCard = false,
+}: {
+  isCarouselCard?: boolean;
+}) => {
   return (
-    <Skeleton className="aspect-square h-auto w-[140px] rounded sm:w-[180px] lg:w-[192px]"></Skeleton>
+    <div
+      className={cn(
+        "aspect-square h-auto rounded",
+        isCarouselCard ? "w-[290px]" : "w-[140px] sm:w-[180px] lg:w-[192px]",
+      )}
+    >
+      <Skeleton
+        className={cn(
+          "aspect-square h-auto rounded",
+          isCarouselCard ? "w-[290px]" : "w-[140px] sm:w-[180px] lg:w-[192px]",
+        )}
+      ></Skeleton>
+    </div>
   );
 };

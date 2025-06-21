@@ -50,6 +50,7 @@ interface LightboxProps {
   render?: {
     image?: LightboxRenderFunction;
   };
+  onClose?: () => void;
 }
 
 export interface LightboxHandle {
@@ -66,7 +67,10 @@ const defaultImageRender: LightboxRenderFunction = (props, context) => (
 );
 
 const Lightbox = forwardRef<LightboxHandle, LightboxProps>(
-  ({ images, loop = false, lightboxImageClassName = "", render = {} }, ref) => {
+  (
+    { images, loop = false, lightboxImageClassName = "", render = {}, onClose },
+    ref,
+  ) => {
     const [isOpen, setIsOpen] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isCaptionOpen, setIsCaptionOpen] = useState(false);
@@ -79,11 +83,12 @@ const Lightbox = forwardRef<LightboxHandle, LightboxProps>(
       document.body.style.overflow = "hidden";
     };
 
-    const closeLightbox = () => {
+    const closeLightbox = useCallback(() => {
       setIsOpen(false);
       setIsCaptionOpen(false);
       document.body.style.overflow = "";
-    };
+      onClose?.();
+    }, [onClose]);
 
     useImperativeHandle(ref, () => ({ openLightbox }));
 
@@ -133,6 +138,7 @@ const Lightbox = forwardRef<LightboxHandle, LightboxProps>(
       toggleCaption,
       currentIndex,
       images,
+      closeLightbox,
     ]);
 
     const currentImage = images[currentIndex];

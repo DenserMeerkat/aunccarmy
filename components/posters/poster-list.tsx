@@ -13,7 +13,8 @@ const PosterList = () => {
 
   const { isPending, mutate: fetchPosters } = useMutation({
     mutationKey: ["getPosters"],
-    mutationFn: getPosters,
+    mutationFn: ({ page, pageSize }: { page?: number; pageSize?: number }) =>
+      getPosters({ page, pageSize }),
     onSuccess: (data) => {
       setPosters(data);
     },
@@ -25,7 +26,7 @@ const PosterList = () => {
   });
 
   useEffect(() => {
-    fetchPosters();
+    fetchPosters({ page: undefined, pageSize: undefined });
     setIsDomLoaded(true);
   }, [isDomLoaded, fetchPosters]);
 

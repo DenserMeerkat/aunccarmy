@@ -8,7 +8,7 @@ import { SelectReport } from "@/db/schema";
 const ReportView = ({ report }: { report: SelectReport }) => {
   return (
     <div className="w-full sm:border-x">
-      <main className="mx-auto max-w-5xl border-x bg-gradient-to-b from-muted/40 via-muted/20 to-muted/40 pt-12 md:px-12">
+      <main className="mx-auto max-w-5xl overflow-clip border-x bg-gradient-to-b from-muted/40 via-muted/20 to-muted/40 pt-12 md:px-12">
         <div className="pl-4 pr-3 text-foreground/40 dark:text-foreground/20">
           <div className="flex gap-4">
             <h1
@@ -30,7 +30,7 @@ const ReportView = ({ report }: { report: SelectReport }) => {
             </span>
           </div>
 
-          <div className="mt-2">
+          <div className="mt-6">
             <ReportCarousel slides={(report.images as Slide[]) ?? []} />
           </div>
 

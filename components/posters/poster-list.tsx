@@ -35,7 +35,7 @@ const PosterList = () => {
   ) : (
     <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-2 md:gap-4">
       {posters.map((poster) => (
-        <PosterCard key={poster.id} {...poster} />
+        <PosterCard key={poster.id} poster={poster} />
       ))}
     </div>
   );

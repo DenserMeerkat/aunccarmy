@@ -160,7 +160,6 @@ export const HomeCarouselSkeleton = () => {
         <div className="flex gap-2">
           <Skeleton className="h-9 w-9 rounded-full" />
           <Skeleton className="h-9 w-9 rounded-full" />
-          <Skeleton className="h-9 w-9 rounded-full" />
         </div>
         <div className="hidden gap-1.5 sm:flex">
           <Skeleton className="h-4 w-4 rounded-full" />

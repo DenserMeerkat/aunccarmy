@@ -55,6 +55,7 @@ const HomeCarousel = () => {
                 variant={"secondary"}
                 size={"icon"}
                 className="absolute bottom-2 right-2 rounded-sm opacity-0 shadow-md transition-opacity duration-300 group-hover:opacity-100"
+                aria-label="Open in fullscreen"
               >
                 <FullscreenIcon />
               </Button>
